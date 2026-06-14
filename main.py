@@ -1,5 +1,9 @@
+from optimal_stopping import Selector
+
 def main():
-    print("Hello from optimal-stopping!")
+    s = Selector()
+    outcome = s.run()
+    print(outcome)
 
 
 if __name__ == "__main__":
