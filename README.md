@@ -1,12 +1,6 @@
 # Optimal Stopping
 
-A Python implementation of the **optimal stopping problem** (also known as the secretary problem), demonstrating how to maximize the probability of selecting the best candidate from a sequence of random values.
-
-## What is Optimal Stopping?
-
-The optimal stopping problem is a classic decision theory challenge: given a sequence of candidates (or values) that you can review in order, how do you decide when to stop reviewing and make a final selection to maximize the probability of choosing the best one?
-
-The strategy implemented here uses the **37% Rule**: skip the first 37% of candidates (the optimal threshold), then select the first candidate that is better than any seen so far. This mathematically maximizes your chances of selecting the best candidate.
+A Python implementation of the [optimal stopping problem](https://en.wikipedia.org/wiki/Optimal_stopping) (also known as the Secretary problem), demonstrating how to maximize the probability of selecting the best candidate from a sequence of random values.
 
 ## Features
 
@@ -17,14 +11,12 @@ The strategy implemented here uses the **37% Rule**: skip the first 37% of candi
 
 ## Installation
 
-Requires Python 3.14+
-
 ```bash
-# Install dependencies using uv
-uv pip install -r requirements.txt
+git clone https://github.com/ryan-e-folds/optimal-stopping.git
+```
 
-# Or with pip
-pip install pydantic>=2.13.4 ruff>=0.15.17
+```
+uv sync
 ```
 
 ## Usage
@@ -49,7 +41,7 @@ print(f"Win rate: {win_rate:.2%}")
 ## Running the Demo
 
 ```bash
-python main.py
+uv run main.py
 ```
 
 This runs 1000 experiments using the optimal stopping strategy and displays the win rate.
@@ -80,7 +72,3 @@ With the 37% rule, you should expect a win rate around 37%, which is significant
 The 37% threshold (1/e ≈ 0.368) is derived from optimal control theory. It minimizes the probability of both:
 - Stopping too early (missing the best candidate)
 - Stopping too late (passing on the best candidate)
-
-## License
-
-MIT
